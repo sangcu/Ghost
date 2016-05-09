@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}"/>
+
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&subset=vietnamese"/>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "font/mfn-icons.css"}}"/>
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="nav-closed home blog content-sidebar" itemscope="" itemtype="http://schema.org/Blog">
+<div class="site-containernbt">
+    <header class="site-headernbt">
+        <div class="wrapnbt">
+            <div class="title-areanbt">
+                <div class="headersec section" id="headersec">
+                    <div class="widget Header" id="Header1">
+                        <div id="header-inner">
+                            <div class="titlewrapper">
+                                <h1 class="site-titlenbt">
+                                    <a href="{{@blog.url}}">
+                                        <img class="logo" src="{{asset 'assets/images/logo-cione.svg'}}"/>
+                                    </a>
+                                </h1>
+                            </div>
+                            <h2 class="site-descriptionnbt">{{@blog.description}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-areanbt">
+                <nav class="nav-headernbt" role="navigation">
+                    <ul class="thefunk-nav-menunbt thefunk-head-navnbt">
+                        <li><a href="/learning-model">Mô hình "Learning Care"</a></li>
+                        <li><a href="/agreement">Điều khoản sử dụng</a></li>
+                        <li><a href="https://www.cione.vn">Đăng ký học</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {{navigation}}
+    <div class="site-innernbt">
+        <div class="content-sidebar-wrapnbt">
+
+            <div class="">
+                <div class="mainblogsec section" id="mainblogsec">
+                    <div class="widget Blog" id="Blog1">
+                        <div class="blog-posts hentry">
+                            {{#post}}
+                                <h1>{{{title}}}</h1>
+                                {{{content}}}
+                            {{/post}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footernbt">
+    <div class="wrapnbt">
+        <div class="social-buttonsnbt">
+            <a href="https://plus.google.com/" rel="nofollow" target="_blank" title="Google Plus"><i
+                    class="fa fa-google-plus-square"></i></a>
+            <a href="https://www.facebook.com/" rel="nofollow" target="_blank" title="Facebook"><i
+                    class="fa fa-facebook-square"></i></a>
+            <a href="https://www.youtube.com/" rel="nofollow" target="_blank" title="Youtube"><i
+                    class="fa fa-youtube-square"></i></a>
+        </div>
+        <p><!-- Do not edit or remove credits without our permission: newbloggerthemes.com -->
+            Copyright © 2010 -
+            <script type="text/javascript">var creditsyear = new Date();
+            document.write(creditsyear.getFullYear());</script>
+            <a href="https://www.cione.vn/">CiOne</a> | Powered by <a href="http://ghost.io/">Ghost</a><br>Design by <a
+                    href="http://www.hardeepasrani.com/" target="_blank">Hardeep Asrani</a></p>
+    </div>
+</footer>
+</div>
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
+</body>
+</html>

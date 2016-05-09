@@ -1,0 +1,58 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+{{#foreach posts}}
+    <div class="date-outer">
+
+        <h2 class="date-header"><span>{{date format='YYYY-MM-DD'}}</span></h2>
+
+        <div class="date-posts">
+
+            <div class="post-outer">
+                <article class="{{post_class}} post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+                    <header class="entry-header">
+                        <h1 class="post-title entry-title" itemprop="name">
+                            <a href="{{url}}">{{{title}}}</a>
+                        </h1>
+                        <p class="entry-metanbt">
+                            <span class="post-author vcard"><i class="icon-user"></i>&nbsp;<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">{{author}}</span></span>&nbsp;&nbsp;&nbsp;
+                            <i class="icon-calendar-line"></i>&nbsp;<meta content="{{url}}" itemprop="url"><a class="timestamp-link" href="{{url}}" rel="bookmark" title="permanent link">
+                            <span class="published updated" itemprop="datePublished" title="{{date published_at format="DD MMM, YYYY"}}">{{date published_at format="DD MMM, YYYY"}}</span></a>&nbsp;&nbsp;&nbsp;
+                            <i class="icon-folder"></i>&nbsp;{{tags}}
+                        </p>
+                    </header>
+                    <div class="post-header-line-1"></div>
+                    <div class="post-body entry-content" itemprop="articleBody">
+                        <div>
+                            {{#if image}}
+                            <img src="{{image}}" class="pbtthumbimg">
+                            {{/if}}
+                            <div>
+                                {{excerpt words="50"}}
+                            </div>
+                        </div>
+                        <div style="float:right;padding-right:10px;margin-top:10px;">
+                            <a class="readmorenbt" href="{{url}}">Xem tiếp <i class="icon-forward"></i></a>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="pbtsharethisbutt">
+                            <ul class="pbt-social-icons">
+                                <li class="Share-this-arti">Chia sẻ trên:&nbsp;&nbsp;</li>
+                                <li class="pbtfacebook">
+                                    <a href="http://www.facebook.com/share.php?v=4&amp;src=bm&amp;u={{url}}&amp;t={{title}}" onclick="window.open(this.href,&quot;sharer&quot;,&quot;toolbar=0,status=0,width=626,height=436&quot;); return false;" rel="nofollow" target="_blank" title="Share this on Facebook"><i class="icon-facebook-squared"></i>&nbsp;Facebook</a></li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </article>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
+</article>
+{{/foreach}}
+<div style="clear: both;"></div>
+<div class="blog-pager" id="blog-pager">
+    {{pagination}}
+</div>
+<div class="clear"></div>

@@ -1,0 +1,14 @@
+<div class="blog-pager" id="blog-pager">
+    {{#if prev}}
+        <span id="blog-pager-newer-link" class="pagination-link">
+            <a class="blog-pager-newer-link" href="{{page_url prev}}" title="Bài gần đây"><i class="icon-left-open"></i></a>
+        </span>
+    {{/if}}
+    <span class="pagination-link">{{page}}/{{pages}}</span>
+    {{#if next}}
+    <span id="blog-pager-older-link" class="pagination-link">
+        <a class="blog-pager-older-link" href="{{page_url next}}" title="Bài cũ hơn"><i class="icon-right-open"></i></a>
+    </span>
+    {{/if}}
+
+</div>
