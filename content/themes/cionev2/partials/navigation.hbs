@@ -1,0 +1,19 @@
+<nav class="nav-primarynbt">
+    <div class="wrapnbt">
+        <ul class="thefunk-nav-menunbt">
+            {{#foreach navigation}}
+                <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" role="presentation">
+                    <a href="{{url absolute="true"}}" itemprop="url" class="sf-with-ul">
+                        <span itemprop="name">{{label}}</span>
+                    </a>
+                </li>
+            {{/foreach}}
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-right" role="search">
+                <form action="https://cse.google.com/cse/publicurl" id="searchformnbt" method="get" role="search" target="_blank">
+                          <input name="cx" type="hidden" value="001814991810100599896:tc6em4x8dco">
+                          <input class="search-querynbt" id="s" name="q" type="text" value="" placeholder="Từ khoá" style="width:100%;">
+                  </form>
+            </li>
+        </ul>
+    </div>
+</nav>

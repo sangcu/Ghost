@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "font/mfn-icons.css"}}"/>
+    {{#is "post,page"}}
+      <link rel="stylesheet" type="text/css" href="{{asset "highlightjs/styles/monokai-sublime.css"}}" title="Monokai Sublime">
+      <script type="text/javascript" src="{{asset "highlightjs/highlight.min.js"}}"></script>
+      <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    {{/is}}
+    <script type="text/javascript">
+        WebFontConfig = {
+          google: {
+            families: ['Roboto:300,400,700:Vietnamese', 'Roboto+Slab:400,700:Vietnamese']
+          }
+        };
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
+  </script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="full-width-content" itemscope="" itemtype="http://schema.org/Blog">
+	<div class="site-containernbt">
+		<div class="site-innernbt">
+			<div class="content-sidebar">
+				<main class="content" role="main">
+					<article class="{{post_class}} post type-post tag-threaded-comments entry" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+						<div class="entry-content" itemprop="text" style="text-align:center;">
+							<p><img src="{{asset "assets/images/error-img.png"}}" title="error"></p>
+							<h3>Trang bạn yêu cầu không được tìm thấy</h3>
+							<a class="button" href="{{@blog.url}}" style="font-weight:400;">Quay lại </a>
+						</div>
+
+					</article>
+				</main>
+			</div>
+		</div>
+	</div>
+
+	<footer class="site-footernbt" itemscope="" itemtype="http://schema.org/WPFooter" style="width:100%;position:absolute;bottom:0;left:0;">
+		<div class="wrap">
+			<p>
+				<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+			</p>
+		</div>
+	</footer>
+
+</body>

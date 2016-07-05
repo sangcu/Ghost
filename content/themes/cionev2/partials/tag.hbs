@@ -1,0 +1,7 @@
+{{#foreach tags}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" role="presentation">
+        <a href="{{url absolute="true"}}" itemprop="url" class="sf-with-ul">
+            <span itemprop="name">{{label}}</span>
+        </a>
+    </li>
+{{/foreach}}

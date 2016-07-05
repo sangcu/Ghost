@@ -1,0 +1,68 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<main class="content hentry" role="main">
+<article class="{{post_class}} post type-post tag-threaded-comments entry" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <header class="entry-header">
+        <h1 class="post-title entry-title" itemprop="name">
+            <a href="{{url}}">{{{title}}}</a>
+        </h1>
+        <p class="entry-metanbt">
+            <span class="post-author vcard"><i class="icon-user"></i>&nbsp;<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">{{author}}</span></span>&nbsp;&nbsp;&nbsp;
+            <i class="icon-calendar-line"></i>&nbsp;<meta content="{{url}}" itemprop="url"><a class="timestamp-link" href="{{url}}" rel="bookmark" title="permanent link">
+            <span class="published updated" itemprop="datePublished" title="{{date published_at format="DD MMM, YYYY"}}">{{date published_at format="DD MMM, YYYY"}}</span></a>&nbsp;&nbsp;&nbsp;
+            <i class="icon-folder"></i>&nbsp;{{tags}}
+        </p>
+    </header>
+    <div class="entry-content" itemprop="text">
+        {{content}}
+    </div>
+    <footer class="entry-footer">
+    {{! Everything inside the #author tags pulls data from the author }}
+
+
+        <section class="share">
+            <a class="shared" href="javascript:void(0)"
+                onclick="return false;">
+                <span class="title">Share</span>
+            </a>
+            <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <!-- <span class="hidden">Twitter</span> -->
+            </a>
+            <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <!-- <span class="hidden">Facebook</span> -->
+            </a>
+            <a class="icon-gplus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <!-- <span class="hidden">Google+</span> -->
+            </a>
+        </section>
+    </footer>
+    </article>
+    {{#author}}
+        <div class="author-profile" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+            {{#if image}}
+                <img width="50px" itemprop="image"  alt="" src="{{image}}?s=70&amp;d=mm&amp;r=g" srcset="{{image}}?s=140&amp;d=mm&amp;r=g 2x" class="avatar avatar-70 photo" height="70" width="70">
+            {{/if}}
+            <div>
+                <a class="g-profile" href="{{url}}" itemprop="url" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+                    <span itemprop="name">{{name}} </span>
+                </a>
+            </div>
+            {{#if bio}}
+                <span itemprop="description">
+                    {{bio}}
+                </span>
+            {{/if}}
+        </div>
+    {{/author}}
+</main>
+
+{{/post}}
